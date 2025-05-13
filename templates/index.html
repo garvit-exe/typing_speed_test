@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Typing Speed Test</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='style.css') }}"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Typing Speed Test</h1>
+
+            <div class="test-area">
+                <div id="text-to-type-container">
+                    <p id="text-to-type"></p>
+                </div>
+                <textarea
+                    id="user-input"
+                    rows="6"
+                    placeholder="Start typing here..."
+                    disabled
+                ></textarea>
+            </div>
+
+            <div class="controls">
+                <div class="stats">
+                    <span id="timer">Time: 0s</span>
+                    <span id="live-wpm">WPM: 0</span>
+                </div>
+                <button id="start-restart-btn">Start Test</button>
+            </div>
+
+            <div id="results" class="hidden">
+                <h2>Results</h2>
+                <p>Words Per Minute (WPM): <span id="result-wpm">0</span></p>
+                <p>Accuracy: <span id="result-accuracy">0%</span></p>
+                <p>
+                    Correct Words: <span id="result-correct-words">0</span> /
+                    <span id="result-typed-words">0</span>
+                </p>
+                <p>Time Taken: <span id="result-time">0s</span></p>
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+</html>
